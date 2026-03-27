@@ -1,6 +1,6 @@
 # 🚀 FCM CLI
 
-⚡ Send Firebase push notifications from terminal in 1 command
+⚡ Send Firebase push notifications from terminal in one command
 
 🧩 With YAML config, profiles, `.env` support, `fcm init`, `--tokens-file`, and JSON output
 
@@ -11,7 +11,11 @@ fcm -t TOKEN -n '{"title":"Hi","body":"Hello"}'
 ```
 
 <div align="center">
-  <img src="./assets/logo.png" width="180" />
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="./assets/logo-light.png">
+    <source media="(prefers-color-scheme: light)" srcset="./assets/logo-dark.png">
+    <img src="./assets/logo-light.png" width="180" alt="FCM CLI logo" style="border-radius:50%;">
+  </picture>
   <h3>Production-ready Firebase Cloud Messaging CLI for Go</h3>
 </div>
 
@@ -485,15 +489,13 @@ Use this when you want more visibility into what the CLI is doing.
 
 # 🤖 JSON Output (Important)
 
-FCM CLI supports machine-readable output through `--json`.
+FCM CLI can return structured machine-readable output using `--json`.
 
-This is one of the most useful features when integrating `fcm` with:
+This is critical for:
 
-- Node.js backends
-- Python scripts
 - CI/CD pipelines
-- job workers
-- monitoring / automation systems
+- backend integrations
+- automation scripts
 
 ---
 
@@ -809,6 +811,21 @@ Areas especially worth improving:
 If you find this project useful, give it a star ⭐
 
 That helps the project grow and makes it easier for other developers to discover it.
+
+---
+
+# ❤️ Sponsor
+
+If FCM CLI saves you time in development, testing, or CI — consider supporting the project.
+
+Your support helps with:
+
+- maintenance
+- new features
+- documentation
+- long-term stability
+
+👉 https://github.com/sponsors/interdev7
 
 ---
 

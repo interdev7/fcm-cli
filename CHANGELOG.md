@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v1.1.1] - 2026-03-27
+
+### Changed
+
+- Updated GitHub Actions release workflow to support the new modular project structure.
+- Updated `README.md` with corrected manual build instructions.
+- Updated `.gitignore` to exclude build artifacts and `dist/` directory.
+
 ## [v1.0.1] - 2026-03-27
 
 ### Changed

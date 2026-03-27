@@ -28,11 +28,11 @@ jobs:
         run: |
           mkdir -p dist
 
-          GOOS=linux GOARCH=amd64 go build -ldflags="-X main.version=${VERSION}" -o dist/fcm-linux-amd64
-          GOOS=linux GOARCH=arm64 go build -ldflags="-X main.version=${VERSION}" -o dist/fcm-linux-arm64
-          GOOS=darwin GOARCH=amd64 go build -ldflags="-X main.version=${VERSION}" -o dist/fcm-darwin-amd64
-          GOOS=darwin GOARCH=arm64 go build -ldflags="-X main.version=${VERSION}" -o dist/fcm-darwin-arm64
-          GOOS=windows GOARCH=amd64 go build -ldflags="-X main.version=${VERSION}" -o dist/fcm-windows-amd64.exe
+          GOOS=linux GOARCH=amd64 go build -ldflags="-X main.version=${VERSION}" -o dist/fcm-linux-amd64 ./cmd/fcm/main.go
+          GOOS=linux GOARCH=arm64 go build -ldflags="-X main.version=${VERSION}" -o dist/fcm-linux-arm64 ./cmd/fcm/main.go
+          GOOS=darwin GOARCH=amd64 go build -ldflags="-X main.version=${VERSION}" -o dist/fcm-darwin-amd64 ./cmd/fcm/main.go
+          GOOS=darwin GOARCH=arm64 go build -ldflags="-X main.version=${VERSION}" -o dist/fcm-darwin-arm64 ./cmd/fcm/main.go
+          GOOS=windows GOARCH=amd64 go build -ldflags="-X main.version=${VERSION}" -o dist/fcm-windows-amd64.exe ./cmd/fcm/main.go
 
       - name: Create Release
         uses: softprops/action-gh-release@v2

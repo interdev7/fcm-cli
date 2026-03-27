@@ -131,7 +131,7 @@ This is the easiest option on macOS if you prefer Homebrew-managed installs.
 git clone https://github.com/interdev7/fcm-cli.git
 cd fcm-cli
 go mod tidy
-go build -o fcm
+go build -o fcm ./cmd/fcm/main.go
 ```
 
 Then run it locally:

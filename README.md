@@ -106,6 +106,21 @@ That is enough to get started.
 
 ---
 
+# 🔐 How to get service-account.json
+
+To send messages, `fcm-cli` needs a Firebase service account key.
+
+1.  Go to the [Firebase Console](https://console.firebase.google.com/).
+2.  Select your project.
+3.  Click the **Gear icon** (Project Settings) > **Service accounts**.
+4.  Click **Generate new private key**.
+5.  Save the JSON file as `service-account.json` in your project directory.
+
+> [!IMPORTANT]
+> Never commit this file to version control. Add it to your `.gitignore`.
+
+---
+
 # 📦 Installation
 
 ## ⚡ Quick Install (Recommended)

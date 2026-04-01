@@ -35,5 +35,4 @@ go.work.sum
 # .vscode/
 
 # Build artifacts
-fcm
 dist/

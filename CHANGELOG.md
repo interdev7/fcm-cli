@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v1.1.2] - 2026-04-01
+
+### Added
+
+- Rich ANSI banner with gradient effects and project information.
+- New `banner.go` file to handle CLI branding and usage formatting.
+
+### Fixed
+
+- Updated `.gitignore` to prevent recursive ignoring of the `cmd/fcm/` directory by removing the broad `fcm` pattern.
+
+### Changed
+
+- Refactored CLI entry point to suppress banner display during normal command execution. The banner now only appears on help commands or when no arguments are provided.
 ## [v1.1.1] - 2026-03-27
 
 ### Changed

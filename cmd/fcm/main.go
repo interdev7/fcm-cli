@@ -62,6 +62,13 @@ func runInit(args []string) {
 }
 
 func main() {
+	setupUsage()
+
+	if len(os.Args) == 1 {
+		flag.Usage()
+		return
+	}
+
 	for _, arg := range os.Args[1:] {
 		if arg == "--json" {
 			log.OutputJSON = true
@@ -69,9 +76,15 @@ func main() {
 		}
 	}
 
-	if len(os.Args) > 1 && os.Args[1] == "init" {
-		runInit(os.Args[2:])
-		return
+	if len(os.Args) > 1 {
+		if os.Args[1] == "init" {
+			runInit(os.Args[2:])
+			return
+		}
+		if os.Args[1] == "help" {
+			flag.Usage()
+			return
+		}
 	}
 
 	envFileDefault := os.Getenv("FCM_ENV_FILE")
@@ -114,28 +127,6 @@ func main() {
 
 	helpShort := flag.Bool("h", false, "")
 	helpLong := flag.Bool("help", false, "")
-
-	flag.Usage = func() {
-		fmt.Println("Usage: fcm [options]")
-		fmt.Println("Commands:")
-		fmt.Println("  init                         Generate default fcm.yaml")
-		fmt.Println("Options:")
-		fmt.Println("  -k, --key <file>             Firebase key file")
-		fmt.Println("  -t, --token <token>          Single FCM token")
-		fmt.Println("  --tokens <t1,t2,t3>          Comma-separated token list")
-		fmt.Println("  --tokens-file <file>         File with one token per line")
-		fmt.Println("  -n, --notification <json>    Notification JSON")
-		fmt.Println("  -d, --data <json>            Data JSON")
-		fmt.Println("  -topic <topic>               Topic")
-		fmt.Println("  -c, --condition <expr>       Condition")
-		fmt.Println("  -f, --config <file>          YAML config file")
-		fmt.Println("  --profile <name>             Profile inside config")
-		fmt.Println("  --env-file <file>            Load additional .env file")
-		fmt.Println("  -l, --log <level>            Log level: info|debug|json")
-		fmt.Println("  --json                       Machine-readable output")
-		fmt.Println("  -v, --version                Version")
-		fmt.Println("  -h, --help                   Help")
-	}
 
 	flag.Parse()
 

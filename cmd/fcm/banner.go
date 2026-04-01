@@ -76,6 +76,8 @@ func printBanner() {
 		return
 	}
 
+	fmt.Println()
+	fmt.Println()
 	fmt.Printf("%s███████  ██████ ███    ███%s", cyan, reset)
 	fmt.Printf("      ")
 	fmt.Printf("%s██████ ██      ██%s\n", orange, reset)
